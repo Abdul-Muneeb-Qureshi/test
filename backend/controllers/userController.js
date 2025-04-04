@@ -67,6 +67,8 @@ exports.deleteUser = (req, res) => {
 
 // Get All Users
 exports.getAllUsers = (req, res) => {
+  return res.status(200).json({messge : "hello"});
+
   db.all('SELECT user_id, username, email, created_at FROM Users', [], (err, rows) => {
     if (err) {
       return res.status(500).json({ message: 'Error fetching users' });
